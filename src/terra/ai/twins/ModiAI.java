@@ -4,8 +4,8 @@ import arc.math.*;
 import mindustry.ai.types.FlyingAI;
 
 public class ModiAI extends FlyingAI {
-    public float widthBounds = -75;
-    public float heightBounds = 35;
+    public float widthBounds = 600;
+    public float heightBounds = 50;
 
     @Override
     public void updateUnit(){
@@ -13,7 +13,7 @@ public class ModiAI extends FlyingAI {
         if (target != null){
             unit.x = Mathf.clamp(unit.x, target.x() - widthBounds, target.x() + widthBounds);
             unit.y = Mathf.clamp(unit.y, target.y() - heightBounds, target.y() + heightBounds);
-            moveTo(target, unit.type.range * 0.8f);
+            moveTo(target, unit.type.range * 0.8f, 2f, true, null);
             unit.lookAt(target);
         }
     }
