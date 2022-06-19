@@ -42,7 +42,7 @@ public class TerraDustry extends Mod{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
-            weapons.add(new Weapon("empty"){{
+            weapons.add(new Weapon(""){{
                 range = 300f;
                 reload = 5f;
                 x = 4f;
@@ -79,7 +79,7 @@ public class TerraDustry extends Mod{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
-            weapons.add(new Weapon("empty"){{
+            weapons.add(new Weapon(""){{
                 range = 300f;
                 reload = 5f;
                 x = 4f;
