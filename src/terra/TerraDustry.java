@@ -1,16 +1,12 @@
 package terra;
 
-import arc.*;
-import arc.util.*;
 import mindustry.content.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.part.*;
-import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.mod.*;
 import mindustry.type.*;
-import mindustry.ui.dialogs.*;
 import terra.ai.twins.MagniAI;
 import terra.ai.twins.ModiAI;
 import terra.type.*;
@@ -39,12 +35,13 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new ModiAI();
+            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
             tails.add(new Tail(15, 15, 20, 2, true, Pal.heal));
-            weapons.add(new Weapon("empty"){{
+            weapons.add(new Weapon(){{
                 range = 300f;
                 reload = 5f;
                 x = 4f;
@@ -76,12 +73,13 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new MagniAI();
+            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
             tails.add(new Tail(15, 15, 20, 2, true, Pal.heal));
-            weapons.add(new Weapon("empty"){{
+            weapons.add(new Weapon(){{
                 range = 300f;
                 reload = 5f;
                 x = 4f;
