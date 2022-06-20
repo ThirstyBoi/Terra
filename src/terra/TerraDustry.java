@@ -13,6 +13,8 @@ import mindustry.type.*;
 import mindustry.ui.dialogs.*;
 import terra.ai.twins.MagniAI;
 import terra.ai.twins.ModiAI;
+import terra.type.*;
+
 public class TerraDustry extends Mod{
 
     public UnitType magni;
@@ -20,7 +22,7 @@ public class TerraDustry extends Mod{
 
     @Override
     public void loadContent() {
-        modi = new UnitType("modi") {{
+        modi = new TerraUnit("modi") {{
             flying = true;
             outlines = false;
             lowAltitude = true;
@@ -37,11 +39,11 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new ModiAI();
-            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
+            tails.add(new Tail(15, 15, 20, 2, true, Pal.heal));
             weapons.add(new Weapon("empty"){{
                 range = 300f;
                 reload = 5f;
@@ -57,7 +59,7 @@ public class TerraDustry extends Mod{
             }});
         }};
 
-        magni = new UnitType("magni") {{
+        magni = new TerraUnit("magni") {{
             flying = true;
             outlines = false;
             lowAltitude = true;
@@ -74,11 +76,11 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new MagniAI();
-            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
             }});
+            tails.add(new Tail(15, 15, 20, 2, true, Pal.heal));
             weapons.add(new Weapon("empty"){{
                 range = 300f;
                 reload = 5f;
@@ -96,19 +98,5 @@ public class TerraDustry extends Mod{
     }
 
     public TerraDustry(){
-        Log.info("Loaded TerraDustry constructor.");
-
-        //listen for game load event
-        Events.on(ClientLoadEvent.class, e -> {
-            //show dialog upon startup
-            Time.runTask(10f, () -> {
-                BaseDialog dialog = new BaseDialog("frog");
-                dialog.cont.add("behold").row();
-                //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("terradustry-frog")).pad(20f).row();
-                dialog.cont.button("I see", dialog::hide).size(100f, 50f);
-                dialog.show();
-            });
-        });
     }
 }
