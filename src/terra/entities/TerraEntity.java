@@ -4,19 +4,19 @@ import arc.graphics.g2d.*;
 import arc.struct.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
+import mindustry.type.*;
 import terra.type.*;
 
 public class TerraEntity extends UnitEntity{
     public Seq<Trail> tails = new Seq<>();
     public static int classid;
 
-    public TerraEntity(){
-        super();
-        if(type instanceof TerraUnit u){
-            for(Tail tail : u.tails){
-                tails.add(new Trail(tail.length));
-            }
-        }
+    public TerraEntity setup(TerraUnit type){
+        this.type = type;
+        for(Tail tail : type.tails){
+            tails.add(new Trail(tail.length));
+        };
+        return this;
     }
 
     @Override

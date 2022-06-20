@@ -35,7 +35,6 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new ModiAI();
-            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;
@@ -73,7 +72,6 @@ public class TerraDustry extends Mod{
             engineOffset = 10;
             itemCapacity = 0;
             controller = u -> new MagniAI();
-            constructor = UnitEntity::create;
             parts.add(new RegionPart("-glow"){{
                 outline = false;
                 layer = Layer.bullet - 0.02f;

@@ -15,7 +15,7 @@ public class TerraUnit extends UnitType{
 
     @Override
     public void init(){
-        TerraEntity.classid = EntityMapping.register("terradustry-" + name, TerraEntity::new);
+        TerraEntity.classid = EntityMapping.register("terradustry-" + name, TerraEntity::create);
         constructor = TerraEntity::new;
 
         super.init();
@@ -32,5 +32,10 @@ public class TerraUnit extends UnitType{
                 tails.add(tail);
             }
         }
+    }
+
+    @Override
+    public Unit create(Team team){
+        return ((TerraEntity) super.create(team)).setup(this);
     }
 }
