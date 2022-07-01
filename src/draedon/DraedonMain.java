@@ -39,10 +39,10 @@ public class DraedonMain extends Mod{
             hidden = true;
 
             drag = 0.07f;
-            speed = 13f;
-            rotateSpeed = 8f;
+            speed = 9f;
+            rotateSpeed = 12f;
             accel = 0.08f;
-            health = 63000f;
+            health = 200000f;
             armor = 3f;
             hitSize = 50f;
             itemCapacity = 0;
@@ -60,20 +60,23 @@ public class DraedonMain extends Mod{
             }});
             weapons.add(new Weapon(){{
                 range = 300f;
-                reload = 14f;
+                reload = 5f;
                 x = 0f;
                 y = 32f;
                 top = false;
                 mirror = false;
                 shootSound = Sounds.artillery;
-                bullet = new BasicBulletType(40f, 75){{
+                bullet = new BasicBulletType(80f, 100){{
                     frontColor = Pal.lighterOrange;
                     backColor = Pal.lightishOrange;
                     shootEffect = Fx.ballfire;
                     despawnEffect = Fx.hitBeam;
-                    width = 15f;
-                    height = 70f;
+                    width = 7.5f;
+                    height = 35f;
                     lifetime = 15f;
+                    pierce = true;
+                    pierceBuilding = true;
+                    pierceCap = 6;
                 }};
             }});
         }};
@@ -87,11 +90,11 @@ public class DraedonMain extends Mod{
             drawCell = false;
             hidden = true;
 
-            drag = 0.07f;
-            speed = 13f;
-            rotateSpeed = 8f;
+            drag = 0.14f;
+            speed = 9f;
+            rotateSpeed = 12f;
             accel = 0.08f;
-            health = 63000f;
+            health = 200000f;
             armor = 3f;
             hitSize = 50f;
             engineOffset = 10;
@@ -119,7 +122,7 @@ public class DraedonMain extends Mod{
                 mirror = false;
                 top = false;
                 shootSound = Sounds.flame2;
-                bullet = new BulletType(20f, 40){{
+                bullet = new BulletType(20f, 90){{
                     hitSize = 40f;
                     pierce = true;
                     pierceBuilding = true;

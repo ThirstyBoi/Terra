@@ -7,8 +7,8 @@ import draedon.content.ApolloUnit;
 import draedon.content.ArtemisUnit;
 
 public class ApolloAI extends FlyingAI {
-    public float widthBounds = 400;
-    public float heightBounds = 200;
+    public float widthBounds = 600;
+    public float heightBounds = 600;
     public float regroupCooldown = 0;
 
     public boolean retarget(){
@@ -20,9 +20,9 @@ public class ApolloAI extends FlyingAI {
         updateTargeting();
         //clamps to his target
         if (target != null) {
-            unit.x = Mathf.clamp(unit.x, target.x() - widthBounds, target.x() + widthBounds);
-            unit.y = Mathf.clamp(unit.y, target.y() - heightBounds, target.y() + heightBounds);
-            moveTo(target, unit.type.range * 0.9f, 120f, false, null);
+            //unit.x = Mathf.clamp(unit.x, target.x() - widthBounds, target.x() + widthBounds);
+            //unit.y = Mathf.clamp(unit.y, target.y() - heightBounds, target.y() + heightBounds);
+            circleAttack(unit.type.range * 0.25f);
             unit.lookAt(target);
             regroupCooldown = 300;
         }
