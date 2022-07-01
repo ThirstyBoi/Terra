@@ -21,7 +21,7 @@ public class ArtemisAI extends FlyingAI {
         if (target != null) {
             //unit.x = Mathf.clamp(unit.x, target.x() - widthBounds, target.x() + widthBounds);
             //unit.y = Mathf.clamp(unit.y, target.y() - heightBounds, target.y() + heightBounds);
-            circleAttack(unit.type.range * 0.9f);
+            circleAttack(unit.type.range * 1.2f);
             unit.lookAt(target);
         }
     }

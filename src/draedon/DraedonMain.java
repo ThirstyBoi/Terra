@@ -39,8 +39,8 @@ public class DraedonMain extends Mod{
             hidden = true;
 
             drag = 0.07f;
-            speed = 9f;
-            rotateSpeed = 12f;
+            speed = 7f;
+            rotateSpeed = 4f;
             accel = 0.08f;
             health = 200000f;
             armor = 3f;
@@ -59,14 +59,14 @@ public class DraedonMain extends Mod{
                 layer = Layer.bullet - 0.02f;
             }});
             weapons.add(new Weapon(){{
-                range = 300f;
+                range = 450f;
                 reload = 5f;
                 x = 0f;
                 y = 32f;
                 top = false;
                 mirror = false;
                 shootSound = Sounds.artillery;
-                bullet = new BasicBulletType(80f, 100){{
+                bullet = new BasicBulletType(60f, 100){{
                     frontColor = Pal.lighterOrange;
                     backColor = Pal.lightishOrange;
                     shootEffect = Fx.ballfire;
@@ -90,9 +90,9 @@ public class DraedonMain extends Mod{
             drawCell = false;
             hidden = true;
 
-            drag = 0.14f;
-            speed = 9f;
-            rotateSpeed = 12f;
+            drag = 0.07f;
+            speed = 7f;
+            rotateSpeed = 4f;
             accel = 0.08f;
             health = 200000f;
             armor = 3f;
@@ -147,8 +147,8 @@ public class DraedonMain extends Mod{
             abilities.add(new Ability(){
                 @Override
                 public void death(Unit unit){
-                    ArtemisUnit apollo = (ArtemisUnit) Vars.content.unit("draedon-artemis").spawn(unit.team, unit.x + 10f, unit.y + 10f);
-                    ApolloUnit artemis = (ApolloUnit)Vars.content.unit("draedon-apollo").spawn(unit.team, unit.x - 10f, unit.y - 10f);
+                    ArtemisUnit apollo = (ArtemisUnit) Vars.content.unit("draedon-artemis").spawn(unit.team, unit.x + 5f, unit.y + 5f);
+                    ApolloUnit artemis = (ApolloUnit)Vars.content.unit("draedon-apollo").spawn(unit.team, unit.x - 5f, unit.y - 5f);
                     apollo.apolloPair = artemis;
                     artemis.artemisPair = apollo;
                 }
