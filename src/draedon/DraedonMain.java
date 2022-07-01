@@ -25,10 +25,10 @@ public class DraedonMain extends Mod{
 
     @Override
     public void loadContent() {
-        artemisID = EntityMapping.register("terradustry-artemis", ArtemisUnit::new);
-        apolloID = EntityMapping.register("terradustry-apollo", ApolloUnit::new);
+        artemisID = EntityMapping.register("draedon-artemis", ArtemisUnit::new);
+        apolloID = EntityMapping.register("draedon-apollo", ApolloUnit::new);
 
-        EntityMapping.nameMap.put("terradustry-twins-spawner", UnitEntity::create);
+        EntityMapping.nameMap.put("draedon-twins-spawner", UnitEntity::create);
         artemis = new ExoTwinsUnitType("artemis") {{
             localizedName = "Artemis";
             description = "you're not supposed to see this buddy. :)";
@@ -144,8 +144,8 @@ public class DraedonMain extends Mod{
             abilities.add(new Ability(){
                 @Override
                 public void death(Unit unit){
-                    ArtemisUnit apollo = (ArtemisUnit) Vars.content.unit("terradustry-artemis").spawn(unit.team, unit.x + 10f, unit.y + 10f);
-                    ApolloUnit artemis = (ApolloUnit)Vars.content.unit("terradustry-apollo").spawn(unit.team, unit.x - 10f, unit.y - 10f);
+                    ArtemisUnit apollo = (ArtemisUnit) Vars.content.unit("draedon-artemis").spawn(unit.team, unit.x + 10f, unit.y + 10f);
+                    ApolloUnit artemis = (ApolloUnit)Vars.content.unit("draedon-apollo").spawn(unit.team, unit.x - 10f, unit.y - 10f);
                     apollo.apolloPair = artemis;
                     artemis.artemisPair = apollo;
                 }
