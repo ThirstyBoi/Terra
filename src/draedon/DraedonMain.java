@@ -144,10 +144,10 @@ public class DraedonMain extends Mod{
             abilities.add(new Ability(){
                 @Override
                 public void death(Unit unit){
-                    ArtemisUnit modi = (ArtemisUnit) Vars.content.unit("terradustry-artemis").spawn(unit.team, unit.x + 10f, unit.y + 10f);
-                    ApolloUnit magni = (ApolloUnit)Vars.content.unit("terradustry-apollo").spawn(unit.team, unit.x - 10f, unit.y - 10f);
-                    modi.apolloPair = magni;
-                    magni.artemisPair = modi;
+                    ArtemisUnit apollo = (ArtemisUnit) Vars.content.unit("terradustry-artemis").spawn(unit.team, unit.x + 10f, unit.y + 10f);
+                    ApolloUnit artemis = (ApolloUnit)Vars.content.unit("terradustry-apollo").spawn(unit.team, unit.x - 10f, unit.y - 10f);
+                    apollo.apolloPair = artemis;
+                    artemis.artemisPair = apollo;
                 }
             });
         }};
