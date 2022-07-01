@@ -137,7 +137,7 @@ public class DraedonMain extends Mod{
             localizedName = "The Twins";
             outlines = false;
             health = 0f;
-            description = "Magni and Modi, a deadly pair that has struck down many that dare defy their Father, paired with deadly pulse cannons and extreme agility, many rarely live to tell the tale.";
+            description = "Artemis and Apollo, a pair of destroyers with deadly pulse cannons and extreme agility, many rarely live to tell the tale.";
             deathSound = Sounds.none;
             deathExplosionEffect = Fx.spawnShockwave;
             constructor = UnitEntity::create;
