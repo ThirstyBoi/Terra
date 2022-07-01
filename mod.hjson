@@ -1,17 +1,17 @@
 #the mod name as displayed in-game
-displayName: "Terra"
+displayName: "Draedon's Ultimatum"
 
 #the internal name of your mod
-name: "terradustry"
+name: "draedon"
 
 #your name
 author: "ThirstyBoi"
 
 #the fully qualified main class of the mod
-main: "terra.TerraDustry"
+main: "draedon.DraedonMain"
 
 #the mod description as seen in the mod dialog
-description: "A."
+description: "Terradustry reworked for v7 introducing content from both Terraria and one of Terraria's most popular mods, Calamity. (Units currently have placeholder AI)"
 
 #the mod version
 version: 1.0
